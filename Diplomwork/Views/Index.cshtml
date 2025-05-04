@@ -1,0 +1,26 @@
+@using Diplomwork.Models
+@model List<Diplomwork.Models.Post>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <h1>Posts</h1>
+    <ul>
+        @foreach (var post in Model)
+        {
+            <li>
+                <strong>@post.Title</strong>
+                <p>@post.Content</p>
+                <p>Author: @post.Author.UserName</p>
+                <p>Category: @post.Category.Name</p>
+                <p>Created At: @post.CreatedAt</p>
+            </li>
+        }
+    </ul>
+</body>
+</html>
